@@ -40,3 +40,17 @@ groups['all_moedas'] = all_moedas
 game = True
 
 
+font = pygame.font.SysFont(None, 48)
+keys_down = {}
+pla = ''
+with open('../data/leaderboard.txt', 'rt') as placar:
+    pla = placar.readline()
+tempo_vivo = 0
+tempo_em_s = 0
+dificuldade = 1
+mort = 151
+#comeca jogo
+pit = '../assets/sounds/mus.mp3'
+mixer.music.load(pit)
+mixer.music.set_volume(0.3)
+mixer.music.play(-1)
