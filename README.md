@@ -30,6 +30,15 @@ O cenário é gerado dinamicamente, e o jogador precisa ter reflexos rápidos e 
    python main.py
    ```
 
+
+IMPORTANTE:
+   o jogo deve ser executado no terminal
+   o jogo deve ser salvo no computador
+   se estiver salvo em 'Documents', em uma pasta chamada 'GitHub', por exemplo, digitar no terminal:
+    cd .\Documents\GitHub\pygame\src\ e aperte enter.
+    após apertar enter, digite 'python .\main.py' e aperte enter novamente
+   ```
+
 ## 👨‍💻 Desenvolvedores
 
 - Gabriel Mariano  
