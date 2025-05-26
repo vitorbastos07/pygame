@@ -1,4 +1,3 @@
-#Classes
 from typing import get_origin
 import pygame
 from random import randint
@@ -9,7 +8,6 @@ from config import *
 
 class Carros(pygame.sprite.Sprite):
     def __init__(self, assets, nivel1):
-        # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
         assets['Spawny'] = [
         300,
@@ -56,17 +54,13 @@ class Carros(pygame.sprite.Sprite):
             self.image = pygame.transform.flip(self.image, True, False)
         self.speedy = 0
     def update(self):
-        # Atualizando a posição do meteoro
         self.rect.x += self.speedx
         self.rect.y += self.speedy
-        # Se o meteoro passar do final da tela, volta para cima e sorteia
-        # novas posições e velocidades
         if self.rect.top > HEIGHT or self.rect.right < 0 or self.rect.left > WIDTH + 80:
             self.kill()
     
 class Barcos(pygame.sprite.Sprite):
     def __init__(self, assets,nivel1):
-        # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
         assets['Spawnybarc'] = [
         300,
