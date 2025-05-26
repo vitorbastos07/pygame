@@ -11,7 +11,7 @@ pygame.mixer.init()
 
 
 
-#Classes
+
 
 
 
@@ -49,7 +49,7 @@ tempo_vivo = 0
 tempo_em_s = 0
 dificuldade = 1
 mort = 151
-#comeca jogo
+
 pit = '../assets/sounds/mus.mp3'
 mixer.music.load(pit)
 mixer.music.set_volume(0.3)
@@ -70,11 +70,11 @@ while game:
         tempo_em_s += 1
         tempo_vivo = 0
     clock.tick(FPS)
-    # Verifica se houve colisão entre galinha e carro
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             game = False
-        # Verifica se apertou alguma tecla.
+
         if event.type == pygame.KEYDOWN:  
             if event.key == pygame.K_RETURN:
                 nivel1 = 1
@@ -99,7 +99,7 @@ while game:
                 pla = ''
                 with open('../data/leaderboard.txt', 'rt') as placar:
                     pla = placar.readline()
-                    # Verifica se soltou alguma tecla.
+
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT and nivel1 > 0:
                 player.vx = 0
@@ -135,9 +135,8 @@ while game:
         if len(all_barcos) > 1:
             for barco in all_barcos.sprites():
                 barco.kill()
-    # ----- Atualiza estado do jogo
-    # Atualizando a posição do meteoro
-    window.fill((0, 0, 0))  # Preenche com a cor branca
+
+    window.fill((0, 0, 0))  
     if nivel1 == 0:
         window.blit(assets['Background'][0], (0, 0))
     else:
@@ -157,12 +156,7 @@ while game:
         ms = pygame.mixer.Sound('../assets/sounds/mf.mp3')
         ms.set_volume(0.3)
         ms.play() 
-        #for carro in all_carros:    
-        #hits = pygame.sprite.spritecollide(carro, all_carros, True)
-        #for hit in hits:
-            #if carro.id != hit.id:
-                #carro.speedx = 5
-                #hit.speedx = 5
+
     if nivel1 == 5 and player.rect.top <= 0:
         with open('../data/leaderboard.txt', 'wt') as placar:
             if len(pla) > 0:
@@ -171,9 +165,7 @@ while game:
             else:
                 pla = str(tempo_em_s)
             placar.write(pla)
-        # pla = ''        
-        # with open('../data/leaderboard.txt', 'rt') as placar:
-        #     pla = placar.readline()
+
         if len(pla) > 0:
             melhor_temp = font.render('Melhor tempo: {0}s'.format(pla), True, (255,0,0))
 
